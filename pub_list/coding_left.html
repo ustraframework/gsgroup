@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang='ko'>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	<title>GSC 통합로열티 업그레이드</title>
+	<link rel='stylesheet' type='text/css' href='css/base.css'>
+	<script type='text/javascript' src='js/dtree.js'></script>
+	<style>
+		body{padding:20px 10px; font-size: 12px; background-color:beige}
+		ul,ol {list-style-position: inside; padding-left:2px; margin-top: 0;}
+		li {padding:2px}
+		/* li span {
+
+		} */
+		.t_ing {color:#999999;}
+		.t_js {color:brown}
+		.t_app {color:#0042ff}
+		.t_app_js {color:#7395d9}
+		.t_confirm {color:#9600ff}
+		.t_confirm_js {color:#40724b}
+		.t_melon {color:#000}
+		.t_modify {color:#ff0000}
+		/* img{vertical-align:middle} */
+	</style>
+</head>
+<body>
+
+<h1 class='c_left'>BOS 코딩현황</h1>
+<h2 class='c_left'>프로세스</h2>
+<ul>
+	<li><span class='t_ing'>작업진행중</span></li> <!-- 상태메세지 : 일반 -->
+	<li><span class='t_js'>스크립트작업</span></li> <!-- 상태메세지 : 스크립트 -->
+	<li><span class='t_melon'>완료</span></li> <!-- 상태메세지 : 완료 -->
+</ul>
+<h2 class='c_left'>색인</h2>
+<ol>
+	<li><span class='t_melon'>[D] - 중복</span></li> <!-- 상태메세지 : 일반 -->
+	<li><span class='t_melon'>[L] - 레이어팝업</span></li> <!-- 상태메세지 : 일반 -->
+</ol>
+
+<div class='dtree'>
+	<!-- <p><a href='javascript: p.openAll();'><img src='img/btn_expand.gif' alt='Expand All' /></a> <a href='javascript: p.closeAll();'><img src='img/btn_collapse.gif' alt='Collapse All' /></a></p> -->
+	<script type='text/javascript'>
+		var dir = '/coding_list/guide/'
+		var tree1 = {
+			'WSG' : {
+				// '기본결정사항' : {
+				// 	'프로젝트사전 협의사항' : [dir + 'with_back_dev.html',  '일반', 'mainFrame'],
+				// 	'작업 상세규칙'        : [dir + 'checklist_front.html', '일반', 'mainFrame'],
+				// },
+				'Guide' : {
+				 	'font'     : [dir + 'guide_font.html',       '일반', 'mainFrame'],
+				 	'Button'   : [dir + 'guide_button.html',     '일반', 'mainFrame'],
+				 	'Form'     : [dir + 'guide_form.html',       '일반', 'mainFrame'],
+				 	'layout'   : [dir + 'guide_layout.html',     '일반', 'mainFrame'],
+				 	'contents' : [dir + 'guide_contents.html',   '일반', 'mainFrame'],
+					// 'Popup' : ['/coding_list/guide/guide_popup.html', '일반', 'mainFrame'],
+					// 'profile' : ['/coding_list/guide/guide_profile.html', '일반', 'mainFrame'],
+					// 'Table' : ['/coding_list/guide/guide_table.html', '일반', 'mainFrame']
+				},
+			}
+		};
+		var p = new dTree('p', tree1);
+		document.write(p);
+	</script>
+
+
+	<!-- <p><a href='javascript: d.openAll();'><img src='img/btn_expand.gif' alt='Expand All' /></a> <a href='javascript: d.closeAll();'><img src='img/btn_collapse.gif' alt='Collapse All' /></a></p> -->
+	<script type='text/javascript'>
+		var dir = '/html/'
+		var tree = {
+			// 'SYS' : {
+				'템플릿' : {
+					'templete' : [dir + 'templete.html', '일반', 'mainFrame'],
+				},
+				'공통' : {
+					'로그인' : [dir + 'login.html', '일반', 'mainFrame'],
+				},
+				'회원가입' : {
+					'1001-메인페이지'                        							: [dir + 'PG_NP_1001.html', '완료', 'mainFrame'],
+					'2001-약관동의'                        								: [dir + 'PG_NP_2001.html', '완료', 'mainFrame'],
+					'3001-본인인증 선택화면'                        					: [dir + 'PG_NP_3001.html', '완료', 'mainFrame'],
+					'3002_p01-본인인증 NICE본인인증결과처리'                        	: [dir + 'PG_NP_3002_p01.html', '완료', 'mainFrame'],
+					'3003_p01-본인인증 NICE결과처리실패'                        		: [dir + 'PG_NP_3003_p01.html', '완료', 'mainFrame'],
+					'3005_본인인증 자체인증'			                        		: [dir + 'PG_NP_3005.html', '완료', 'mainFrame'],
+					'4001_정보입력'			                        					: [dir + 'PG_NP_4001.html', '완료', 'mainFrame'],
+					'5001_가입완료'			                        					: [dir + 'PG_NP_5001.html', '완료', 'mainFrame'],
+					'6001_실명인증 재가입안내(탈퇴일이내)'			                    : [dir + 'PG_NP_6001.html', '완료', 'mainFrame'],
+					'6002_실명인증 오프라인가입고객안내'			                    : [dir + 'PG_NP_6002.html', '완료', 'mainFrame'],
+					'6003_실명인증 기존가입자안내'			                    		: [dir + 'PG_NP_6003.html', '완료', 'mainFrame'],
+				},
+				'ETC' : {
+					'에러페이지'                                                   			: [dir + 'error.html', '완료', 'mainFrame'],
+					'Loading'    				                                            : [dir + 'loading.html', '완료', 'mainFrame'],
+				}
+			// },
+		}
+		var d = new dTree('d', tree);
+		document.write(d);
+	</script>
+
+</div>
+
+</body>
+</html>
+

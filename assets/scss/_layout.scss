@@ -1,0 +1,435 @@
+// @use 'base'
+.skipNavi {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+  z-index: 50;
+	a {
+		display: block;
+		background: red;
+		color: white;
+		font-size: 0;
+    &:focus {
+      font-size: 14px;
+    }
+  }
+}
+
+// 2021-06-21 14:05:46 스크립트로 처리할 것인가
+html {
+  height: 100%;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  // background-color: $color-05;
+}
+
+.container {
+    padding: {
+      top: 1.25rem;
+      left: 3rem; 
+      right: 3rem;
+      bottom: 3rem;
+    }
+    // 2021-06-30 18:43:34
+    min-width: 1440px;
+    box-shadow: 0 2px 20px 0 rgba(109, 109, 109, 0.06);
+    border: solid 1px #dfe3ea;
+    margin : $layout-gap;
+    border-radius: 10px;
+    background: #fff url('#{$img-path}bg_logo.png') no-repeat 50% 50%;
+    min-height: 600px;
+    height: calc(100vh - 170px); //추후 삭제
+}
+
+#contents {
+  overflow: {
+    y:auto;
+    x:hidden;
+  } 
+  height: 100%;
+  background-color: #fff;
+  padding-top:2rem;
+  section:not(:last-child) {
+    // margin-bottom:1.5rem;
+    margin-bottom:3.438rem;
+  }
+}
+
+header.navbar {
+  font-size: $header-font-size;
+  padding-left: $layout-gap;
+  padding-right: $layout-gap;
+  height: $navbar-height;
+  border-bottom: 1px solid $color-03;
+  h1 {
+    display: flex;
+    margin-right:128px;
+    a {
+      padding-left:0;
+      span {
+        letter-spacing: -.5px;
+      }
+      img {
+        margin-right:8px;
+        max-height: 2rem;
+      }
+    }
+  }
+
+  .navbar-menu {
+    i {
+      color: $color-02;
+      margin-right:0.2em;
+    }
+    .navbar-item {
+      // line-height: $header-line-height;
+      // padding-top:22px;
+      // padding-bottom:22px; 
+      padding:22px 0.8rem;
+    }
+    i:before, .navbar-item {
+      transition: .4s all;
+    }
+    i:before {
+      
+      // height: 30.1px;
+    }
+  }
+  .navbar-start {
+    .navbar-item {
+      &:focus,
+      // &:focus-within,
+      &:hover,
+      &.is-active {
+        background-color: transparent;
+        i:before {
+          color: $color-01;
+        }
+        &::before {
+          opacity: 1;
+          height: 4px;
+          @include transition(height);
+        }
+      }
+      &:before {
+        content: ' ';
+        opacity: 0;
+        height: 0;
+        display: block;
+        width: calc(100% - 20px);
+        background-color: $color-01;
+        position: absolute;
+        border-radius: 4px 4px 0 0;
+        bottom: 0;
+        left:52%; // 아이콘만 노출 되는 경우 조절
+        transform: translateX(-50%);
+        // -ms-transform: translateX(-50%);
+      }
+    }
+  }
+  .navbar-end {
+    align-items: center;
+    font-size: 0.938rem;
+    .txt {
+      margin-left:1rem;
+    }
+    strong {
+      color: $color-01;
+      margin: 0 0 0 5px;
+    }
+    .is-hoverable {
+      padding-right: 0;
+      padding-left: 0;
+      .navbar-link {
+        margin-left:10px;
+        overflow: hidden;
+        border-radius: 50%;
+        background:#DDEAFF;
+        width: 2.5rem;
+        height: 2.5rem;
+        justify-content: center;
+        padding:0;
+        border:1px solid transparent;
+        transition: .7s all;
+        // @include transition(border-width);
+        
+        
+        &:after {
+          display: none;
+        }
+        i {
+          margin-right:0;
+          &::before {
+            color: $color-01;
+          }
+        }
+      }
+      &:focus,
+      // &:focus-within,
+      &:hover,
+      &.is-active {
+        .navbar-link {
+          border-width: 1px;
+          border-style: solid;
+          border-color: $color-01;
+        }
+      }
+
+      .navbar-dropdown {
+        border-radius: 8px;
+        border:1px solid $color-03;
+        box-shadow: initial;
+        top:85%;
+        min-width: 128px;
+        .navbar-item {
+          padding:10px 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  html {
+    &.has-aside-left {
+      &.has-aside-expanded {
+        // header.navbar, body {
+        body {
+          padding-left: $aside-width;
+        }
+      }
+      header.navbar, body {
+        @include transition(padding-left);
+      }
+      aside.is-placed-left {
+        display: block;
+      }
+    }
+  }
+
+  aside.aside.is-expanded {
+    width: $aside-width;
+    // width: 325px;
+    
+
+    .menu-list {
+      @include icon-with-update-mark($aside-icon-width);
+
+      span.menu-item-label {
+        display: inline-block;
+      }
+
+      li.is-active {
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+aside.aside {
+  padding-left: $layout-gap;
+  padding-top: $layout-gap;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  height: 100vh;
+  // padding: 0;
+  box-shadow: $aside-box-shadow;
+  margin-top: $navbar-height;
+  background: $color-05; // 왼쪽 메뉴 배경을 유지 할것인가
+
+  .top {
+    height: 56px;
+    margin: 0 0 8px;
+    padding: 0 0 0 16px;
+    border-radius: 8px;
+    box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.15);
+    background-color: $color-01;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    justify-content: space-between;
+    h2 {
+      display: flex;
+      align-items: center;
+      font-weight: 300;
+    }
+    i { 
+      margin-right:8px;
+      color:#fff;
+      transition: .5s all;
+    }
+    button {
+      background-color: $color-01;
+      border:none;
+      border-left:1px solid #3669de;
+      cursor: pointer;
+    }
+  }
+  .menu {
+    overflow: auto;
+    // height: calc(100% - 12.25rem);
+    height: calc(100% - 12.125rem);
+  }
+  .menu-list {
+    li {
+      padding-left:15px;
+      padding-right:5px;
+      a {
+        display: flex;
+        align-items: center;
+
+        .fold {
+          margin-left:auto;
+          color:#a7afc3;
+        }
+        .ic-dot {
+          // margin-right:5px;
+          // width:25px;
+          margin-left:-10px;
+          margin-right:-3px;
+          color: #FD7E00;
+        }
+        & + ul {
+          margin-top:-3px;
+        }
+        &.is-active {
+          .ic-awdn {
+            transform: rotate(-180deg);
+          }
+        }
+      }
+
+      ul {
+        border-left:none;
+        margin:0 0 0.9rem 0;
+        padding-left:20px;
+        font-size: 15px;
+        li {
+          padding-left:0;
+          font-weight: 300;
+          a {
+            padding-right:32px;
+          }
+        }
+      }
+
+
+    }
+  }
+
+}
+// 레프트 flod
+aside.aside {
+  &.is-fold {
+    width:96px !important;
+    .top {
+      padding-left:0;
+
+      h2 {display: none;}
+      button {border-left:none;
+        margin:0 auto;
+      }
+      i {
+        margin-right:.2rem;
+        transform: rotate(-180deg);
+      }
+    }
+    .menu {
+      display: none;
+    }  
+  }
+  
+}
+
+
+
+
+
+@include touch {
+  
+  #wrap, header.navbar {
+    @include transition(margin-left);
+  }
+  aside.aside {
+    @include transition(left);
+  }
+  html.has-aside-mobile-transition {
+    body {
+      // overflow-x: hidden;
+      // overflow-x: auto;2021-06-30 19:52:34
+      // overflow-x: auto;
+      // overflow-y: hidden;
+    }
+    body, #wrap, header.navbar {
+      width: 100vw;
+    }
+    aside.aside {
+      width: $aside-mobile-width;
+      display: block;
+      left: $aside-mobile-width * -1;
+
+      .image {
+        img {
+          max-width: $aside-mobile-width * .33;
+        }
+      }
+
+    }
+  }
+  html.has-aside-mobile-expanded {
+    #wrap, header.navbar {
+      margin-left: $aside-mobile-width;
+      // padding-left: 1rem;
+    }
+    
+    aside.aside {
+      left: 0;
+    }
+  }
+}
+
+@include mobile { 
+  html {
+    // overflow-x: hidden; 2021-06-30 19:47:47
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+@include touch { 
+  html {
+    // overflow-x: hidden; 2021-06-30 19:47:47
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+@include desktop { 
+  html {
+    // overflow-x: hidden; 2021-06-30 19:47:47
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+@include widescreen { 
+    html {
+      // overflow-x: hidden; 2021-06-30 19:47:47
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+}
+
+// scroll
+.simplebar-scrollbar::before {
+  background-color: rgba($color: #000000, $alpha: .3) !important;
+}
