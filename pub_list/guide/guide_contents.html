@@ -4,301 +4,693 @@
 	<meta charset="UTF-8">
 	<title>Contents Guide</title>
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
-	<link rel="stylesheet" href="/npass/css/npass.css">
-	<link rel="stylesheet" href="/npass/lib/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" href="/npass/css/contents.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/gsc_bos.css" >
 
 	<!-- 가이드용 -->
-	<link rel="stylesheet" type="text/css" href="/coding_list/css/base.css">
-	<link rel="stylesheet" type="text/css" href="/coding_list/css/pretty.css">
-	<link type="text/css" rel="stylesheet" href="/resource/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/pub_list/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/pub_list/css/pretty.css">
+	<link rel="stylesheet" type="text/css" href="/pub_list/css/github.css">
+	<script src="/pub_list/js/jquery-3.2.1.min.js"></script>
 	<!--//  가이드용 -->
-
-	<script type="text/javascript" src="/npass/lib/jquery/jquery.min.js"></script>
-	<script scr="/npass/js/ui.js"></script>
-	<style>
-		.tag:not(body){
+<style>
+	.tag:not(body){
 			align-items : baseline;
 			background : none;
 			display : inline;
 			padding : 0;
 			height : auto;
-		}
-	</style>
+	}
+	
+	.example .tag {
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-color: whitesmoke;
+		border-radius: 4px;
+		color: #4a4a4a;
+		display: -webkit-inline-box;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		font-size: 0.75rem;
+		height: 2em;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		line-height: 1.5;
+		padding-left: 0.75em;
+		padding-right: 0.75em;
+		white-space: nowrap;
+	}
+	.tabs.is-boxed a:hover {
+    background-color: white;
+    color: #447cff;
+	}
+</style>
 </head>
 <body>
 
 <div id="wrap" class="coding_guide">
-	<h1 class="h1_guide">Contents Guide</h1>
-	<h2 class="h2_guide">01-1. 단일 class - border</h2>
 
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="is-border-top" style="padding:20px">상단 border</div>
-		<div class="is-border-right" style="padding:20px">우측 border</div>
-		<div class="is-border-left" style="padding:20px">좌측 border</div>
-		<div class="is-border-bottom" style="padding:20px">하단 border</div>
-	</div>
-	<!-- // View -->
+	<h1 class="h1_guide">컨텐츠 Guide</h1>
+	<h2 class="h2_guide">01. 레이아웃</h2>
+	<!-- code -->
+    <div class="example">
+		<article class="message is-danger is-small">
+			<div class="message-body">
+				base-size="높이값"로 데이터 리스트 높이 지정 <br>
+				(데이터 노출안됨, 레이아웃 오류시 확인 필요)
+			</div>
+		</article>
 
-<!-- Code -->
-<div class="d_desc code">
-	<xmp class="prettyprint linenums javascript">
-<div class="is-border-top"></div>
-<div class="is-border-right"></div>
-<div class="is-border-left"></div>
-<div class="is-border-bottom"></div>
-	</xmp>
-</div>
-<!-- // Code -->
+    </div>
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
 
-	<h2 class="h2_guide">01-2. 단일 class - align</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="is-align-left">좌측 정렬</div>
-		<div class="is-align-center">가운데 정렬</div>
-		<div class="is-align-right">우측 정렬</div>
-	</div>
-	<!-- // View -->
+<!-- 기존 활용 코드 -->
+<dx-item base-size="auto">
+.
+.
+<!-- 모든 base-size="auto"는 임의의 높이값을 입력 -->
+<dx-item base-size="높이값">
+	<!-- ex -->
+	<dx-item base-size="100">
+	<dx-item base-size="500">
+	<!-- //ex -->
 
-<!-- Code -->
-<div class="d_desc code">
-	<xmp class="prettyprint linenums javascript">
-<div class="is-align-left">좌측 정렬</div>
-<div class="is-align-center">가운데 정렬</div>
-<div class="is-align-right">우측 정렬</div>
-	</xmp>
-</div>
-<!-- // Code -->
+	</xmp></pre>
+	<!-- // code -->
 
-	<h2 class="h2_guide">02-1. 데이터 없음</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div style="display : flex; height : 200px">
-			<div class="no-data">
-				<p>검색결과가 없습니다.</p>
+	<div class="example">
+
+		<div class="tb-search">
+			<div class="row">
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col">
+					<label class="label">채널코드</label>
+					<div class="select is-small">
+						<select>
+							<option>Select dropdown</option>
+							<option>With options</option>
+						</select>
+					</div>
+				</div>
+				<div class="col">
+					<label class="label">채널코드</label>
+					<div class="select is-small">
+						<select>
+							<option>Select dropdown</option>
+							<option>With options</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label class="label">두줄일 </label>
+					<input class="input" type="email" placeholder="Recipient email">
+
+					<!---->
+					<div class="control">
+						<label class="b-checkbox checkbox">
+							<input type="checkbox" true-value="true" value="lorem">
+							<span class="check is-primary"></span>
+							<span class="control-label"> Lorem </span>
+						</label>
+					</div>
+
+					<!---->
+				</div>
+				<div class="col is-8">
+					<label class="label">검색 </label>
+					<div class="calendar">
+						<input class="input" type="email" placeholder="Recipient email">
+						<span class="hy"> ~ </span>
+						<input class="input" type="email" placeholder="Recipient email">
+					</div>
+					<div class="control">
+						<label class="b-radio radio">
+							<input type="radio" disabled="" name="answer01" value="one">
+							<span class="check"></span>
+							<span class="control-label"> 시작일자 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer01" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 종료일자 </span>
+						</label>
+					</div>
+				</div>
+
 			</div>
 		</div>
+		<div class="tb-write mt-5">
+			<div class="row">
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col is-6">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label class="label">최초고객 등록일자 등록일자</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+				<div class="col is-9">
+					<label class="label">채널코드</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<label class="label">채널코드</label>
+					<!-- <input class="input" type="email" placeholder="Recipient email">
+					<button class="button">
+						<i class="gsc-icon ic-search"></i>
+						<span class="is-sr-only">검색</span>
+					</button> -->
+					<div class="control is-full">
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="one">
+							<span class="check"></span>
+							<span class="control-label"> 생년월일 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="one">
+							<span class="check"></span>
+							<span class="control-label"> 생년월일 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="one">
+							<span class="check"></span>
+							<span class="control-label"> 생년월일 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="one">
+							<span class="check"></span>
+							<span class="control-label"> 생년월일 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 가나다라마바 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="one">
+							<span class="check"></span>
+							<span class="control-label"> 가나다라마바 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+						<label class="b-radio radio">
+							<input type="radio" name="answer" value="ttt">
+							<span class="check"></span>
+							<span class="control-label"> 성별 </span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col is-12">
+					<label class="label">제공목적</label>
+					<input class="input" type="email" placeholder="Recipient email">
+				</div>
+			</div>
+		</div>
+		<article class="message is-danger is-small mt-5">
+			<div class="message-body">
+			검색영역 컬럼은 최대 3개
+			입력영역 컬럼은 최대 4개
+			</div>
+		</article>
+	</div>
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+
+<!-- 검색영역 -->
+<u-field-set>
+	<u-field-row>
+		<u-field label="샘플">
+			<!-- :label-width 는 사용금지, :width 사용은 필요에 따라 -->
+			<!-- label 영역은 텍스트 오버시 2줄 @줄임표 사용 금지 -->
+			<u-text-box >
+				<!-- u-field 안에 field-row 사용 금지 -->
+		</u-field>
+	</u-field-row>
+</u-field-set>
+
+<!-- 입력폼 -->
+<u-field-set class="view-data-box">
+	<u-field-row>
+		<u-field label="샘플">
+			<u-text-box >
+		</u-field>
+	</u-field-row>
+</u-field-set>
+
+<!-- 컬럼합치기 -->
+<u-field label="샘플" class="is-3-2"> 
+	3칸중 2개 합치기
+<u-field label="샘플" class="is-4-2">
+	4칸중 2개 합치기
+<u-field label="샘플" class="is-4-3">
+	4칸중 3개 합치기
+
+	</xmp></pre>
+	<!-- // code -->
+
+
+	<!-- code -->
+	<div class="example">
+		<div class="sec-info">
+			<div class="left">
+				조회결과: 총 <strong>1,000</strong>건
+				<!-- <h2>이용내역수집조회</h2> -->
+			</div>
+			<div class="right">
+				<div class="tag-box">
+					<div class="control">
+						<div class="tags has-addons">
+							<span class="tag is-dark">정보생성</span>
+							<span class="tag is-success">완료</span>
+						</div>
+					</div>
+					<div class="control">
+						<div class="tags has-addons">
+							<span class="tag is-dark">정보생성</span>
+							<span class="tag is-warning">진행중</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sec-info">
+
+			<div class="right">
+				<div class="tag-box">
+					<div class="control">
+						<div class="tags has-addons">
+							<span class="tag is-dark">정보생성</span>
+							<span class="tag is-success">완료</span>
+						</div>
+					</div>
+					<div class="control">
+						<div class="tags has-addons">
+							<span class="tag is-dark">정보생성</span>
+							<span class="tag is-warning">진행중</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<article class="message is-danger is-small">
+			<div class="message-body">
+			레이아웃용으로 필요시 사용
+			</div>
+		</article>
+	</div>
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+
+<div class="sec-info">
+	<div class="left">
+		<!-- left -->
+	</div>
+	<div class="right">
+		<!-- right -->
+	</div>
+</div>
+
+<!-- right 정렬만 필요할 경우 -->
+<div class="sec-info">
+	<div class="right">
+		<!-- right -->
+	</div>
+</div>
+<!-- left 정렬만 필요할 경우 -->
+<div class="sec-info">
+	<div class="left">
+		<!-- left -->
+	</div>
+</div>	
+	</xmp></pre>
+	<!-- // code -->
+
+	<h2 class="h2_guide">02. 타이틀</h2>
+	<!-- code -->
+    <div class="example">
+
+		<div class="sec-top">
+			<div class="left">
+				<h2>이용내역수집조회</h2>
+			</div>
+			<div class="right">
+				<div class="buttons">
+					<a class="button is-gsc"><i class="gsc-icon ic-search"></i> 검색</a>
+					<a class="button is-gsc is-outlined">고객정보이용내역팝업</a>
+					<a class="button is-gsc is-outlined">엑셀</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- <article class="message is-warning is-small">
+			<div class="message-body">
+			버튼영역
+			</div>
+		</article> -->
+    </div>
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+
+<u-button-bar>
+	<dx-button />
+	<dx-button />
+	<dx-button />
+</u-button-bar>
+
+<!-- 타이틀 없이 버튼만 노출 하는 경우 -->
+<u-button-bar class="no-title">
+	<dx-button />
+	<dx-button />
+	<dx-button />
+</u-button-bar>
+
+	</xmp></pre>
+	<!-- // code -->
+
+	<h2 class="h2_guide">03. 테이블</h2>
+	
+	<!-- View -->
+	<div class="example">
+		<table class="table is-bordered " width="3000">
+			<colgroup>
+				<col>
+				<col>
+				<col>
+				<col>
+				<col>
+				<col>
+				<col width="2000">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>이용내역분류 코드</th>
+					<th>이용내역분류 코드</th>
+					<th>이용내역분류 코드</th>
+					<th>이용내역분류 코드</th>
+					<th>이용내역분류 코드</th>
+					<th>이용내역분류 코드</th>
+					<th>이용내역분류 코드</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+				</tr>
+
+				<tr>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+				</tr>
+
+				<tr>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+				</tr>
+
+				<tr>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+					<td>채널코드명 1234</td>
+				</tr>
+
+			</tbody>
+		</table>
 	</div>
 	<!-- // View -->
 
-<!-- Code -->
-<div class="d_desc code">
-	<xmp class="prettyprint linenums javascript">
-/*
- * 좌우, 상하단 가운데 정렬
- */
-<div class="no-data">
-	<p>검색결과가 없습니다.</p>
-</div>
-	</xmp>
-</div>
-<!-- // Code -->
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+<!-- 기존 데이터 그리드 사용 -->
+<dx-data-grid>
+	...
+</dx-data-grid>
+	</xmp></pre>
+	<!-- // code -->
 
-	<h2 class="h2_guide">03-01. 탭메뉴 Type1</h2>
+
 	<!-- View -->
-	<div class="guide_wrap">
-		<div class="tabs is-toggle">
-			<ul>
-				<li class="is-active">
-					<a href="javascript:;">
-						<span>자택 주소</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<span>직장 주소</span>
-					</a>
-				</li>
-			</ul>
+	<div class="example">
+		<table class="table is-bordered is-type01">
+			<colgroup>
+				<col width="33.3%">
+				<col width="33.3%">
+				<col width="*">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>구분</th>
+					<th>개인정보 수탁자</th>
+					<th>취급위탁 목적</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="has-text-left">마케팅 및 CS</td>
+					<td class="has-text-left">GS 엠비즈</td>
+					<td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+				</tr>
+				<tr>
+					<td class="has-text-left">마케팅 및 CS</td>
+					<td class="has-text-left">GS 엠비즈</td>
+					<td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+				</tr>
+				<tr>
+					<td class="has-text-left">마케팅 및 CS</td>
+					<td class="has-text-left">GS 엠비즈</td>
+					<td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- // View -->
+
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+
+<!-- table 레이아웃 형식 -->
+<div class="data-table">
+	<table>
+		...
+	</table>
+</div>
+
+<!-- div 레이아웃 형식 (현재 컬러가 다름)  -->
+<!-- 카드관리 > 카드조회 > 고객별카드정보조회 참고 -->
+<div class="divTable">
+	<div class="divTableBody">
+		<div class="divTableRow">
+			<div class="divTableCellField">제목</div>
+			<div class="divTableCellField">제목</div>
+		</div>
+		<div class="divTableRow">
+			<div class="divTableCell">내용</div>
+			<div class="divTableCell">내용</div>
 		</div>
 	</div>
-	<!-- // View -->
-
-<!-- Code -->
-<div class="d_desc code">
-	<xmp class="prettyprint linenums javascript">
-<div class="tabs is-toggle">
-	<ul>
-		<li class="is-active">
-			<a href="javascript:;">
-				<span>자택 주소</span>
-			</a>
-		</li>
-		<li>
-			<a href="javascript:;">
-				<span>직장 주소</span>
-			</a>
-		</li>
-	</ul>
 </div>
-	</xmp>
-</div>
-<!-- // Code -->
 
-	<h2 class="h2_guide">03-02. 탭메뉴 Type2 - 라디오버튼</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="tabs type-2">
-			<ul>
-				<li class="is-active">
-					<label>
-						<input type="radio" name="tabs" checked>
-						<span>기본회원정보로 찾기</span>
-					</label>
-				</li>
-				<li>
-					<label>
-						<input type="radio" name="tabs">
-						<span>아이핀으로 찾기</span>
-					</label>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- // View -->
-
-<!-- Code -->
-<div class="d_desc code">
-	<xmp class="prettyprint linenums javascript">
-<div class="tabs type-2">
-	<ul>
-		<li class="is-active">
-			<label>
-				<input type="radio" name="tabs" checked>
-				<span>기본회원정보로 찾기</span>
-			</label>
-		</li>
-		<li>
-			<label>
-				<input type="radio" name="tabs">
-				<span>아이핀으로 찾기</span>
-			</label>
-		</li>
-	</ul>
-</div>
-	</xmp>
-</div>
-<!-- // Code -->
-
-	<h2 class="h2_guide">03-02. 탭메뉴 Type2 - a태그</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="tabs type-2">
-			<ul>
-				<li class="is-active"> <!-- 활성화 class="is-active" -->
-					<a href="javascript:;"><span>카드</span></a>
-				</li>
-				<li>
-					<a href="javascript:;"><span>이메일</span></a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- // View -->
-
-<!-- Code -->
-<div class="d_desc code">
-	<xmp class="prettyprint linenums javascript">
-<div class="tabs type-2">
-	<ul>
-		<li class="is-active"> <!-- 활성화 class="is-active" -->
-			<a href="javascript:;"><span>카드</span></a>
-		</li>
-		<li>
-			<a href="javascript:;"><span>이메일</span></a>
-		</li>
-	</ul>
-</div>
-	</xmp>
-</div>
-<!-- // Code -->
-
-	<h2 class="h2_guide">04-01. Text List - 기본</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="list">
-			<ul>
-				<li>소지하고 계시는 GS&amp;POINT 카드의 카드번호를 입력해 주세요.</li>
-				<li>포인트카드는 전면의 카드번호를 입력하시고, 제휴신용 스마트카드는 전면의 카드번호 하단에 포인트카드 번호가 있습니다.</li>
-			</ul>
-		</div>
-	</div>
-	<!-- // View -->
-
-<!-- Code -->
-<div class="d_desc code">
-<xmp class="prettyprint linenums javascript">
-<div class="list">
-	<ul>
-		<li>소지하고 계시는 GS&amp;POINT 카드의 카드번호를 입력해 주세요.</li>
-		<li>포인트카드는 전면의 카드번호를 입력하시고, 제휴신용 스마트카드는 전면의 카드번호 하단에 포인트카드 번호가 있습니다.</li>
-	</ul>
-</div>
-</xmp>
-</div>
-<!-- // Code -->
-
-	<h2 class="h2_guide">04-02. Text List - Hyphen</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="list hyphen">
-			<ul>
-				<li>소지하고 계시는 GS&amp;POINT 카드의 카드번호를 입력해 주세요.</li>
-				<li>포인트카드는 전면의 카드번호를 입력하시고, 제휴신용 스마트카드는 전면의 카드번호 하단에 포인트카드 번호가 있습니다.</li>
-			</ul>
-		</div>
-	</div>
-	<!-- // View -->
-
-<!-- Code -->
-<div class="d_desc code">
-<xmp class="prettyprint linenums javascript">
-/*
- * class="list" class="hyphen" 추가
- */
-<div class="list hyphen">
-	<ul>
-		<li>소지하고 계시는 GS&amp;POINT 카드의 카드번호를 입력해 주세요.</li>
-		<li>포인트카드는 전면의 카드번호를 입력하시고, 제휴신용 스마트카드는 전면의 카드번호 하단에 포인트카드 번호가 있습니다.</li>
-	</ul>
-</div>
-</xmp>
-</div>
-<!-- // Code -->
-
-	<h2 class="h2_guide">04-03. Text List - dotted</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="list dotted">
-			<ul>
-				<li>소지하고 계시는 GS&amp;POINT 카드의 카드번호를 입력해 주세요.</li>
-				<li>포인트카드는 전면의 카드번호를 입력하시고, 제휴신용 스마트카드는 전면의 카드번호 하단에 포인트카드 번호가 있습니다.</li>
-			</ul>
-		</div>
-	</div>
-	<!-- // View -->
-
-<!-- Code -->
-<div class="d_desc code">
-<xmp class="prettyprint linenums javascript">
-/*
-* class="list" class="dotted" 추가
-*/
-<div class="list dotted">
-	<ul>
-		<li>소지하고 계시는 GS&amp;POINT 카드의 카드번호를 입력해 주세요.</li>
-		<li>포인트카드는 전면의 카드번호를 입력하시고, 제휴신용 스마트카드는 전면의 카드번호 하단에 포인트카드 번호가 있습니다.</li>
-	</ul>
-</div>
-</xmp>
-</div>
-<!-- // Code -->
-
+<!-- *.vue 파일내 css 삭제 필수 -->
+<style lang="scss">
+	.data-table {
+		...
+	}
 	
 
+</style>
+
+	</xmp></pre>
+
+
+	<h2 class="h2_guide">04. 탭	</h2>
+
+	<!-- View -->
+	<div class="example">
+		<div class="tabs is-boxed">
+			<ul>
+				<li class="is-active">
+					<a><span>제휴사별 한도 조회</span></a>
+				</li>
+				<li>
+					<a><span>제휴사별 한도 이력조회</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- // View -->
+
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+
+<!-- 상단 간격 조절이 필요할 경우 -->
+<dx-tab-panel class="mt-t">
+	class="mt-5" 사용으로 간격 조정
+</dx-tab-panel>
+
+
+	</xmp></pre>
+
+	<h2 class="h2_guide">05. 메시지 박스	</h2>
+	<!-- View -->
+	<div class="example">
+		<div class="box is-info">
+			<!-- <h3 class="title_h3"><i class="gsc-icon ic-info"></i>개인정보 수집 목적</h3> -->
+			<ul>
+				<li>- GS&amp;POINT 서비스 제공계약의 성립과 유지 종료를 위한 본인 식별, 본인의사 확인, 회원에 대한 고지 등</li>
+				<li>- GS&amp;POINT 서비스 제공을 위한 통합포인트/통합ID 제공, 회원모집/카드발급, 대금결제, 포인트 적립 및 정산, 고객센터 운영, 불량회원 부정이용 방지 및 비인가 사용방지, 마케팅행사 기획/관리, 기계장치를 통한 차량 정보 중계, 서비스 개발을 위한 연구/조사, 물품 등의 배송 등 </li>
+				<li>- GS&amp;POINT 서비스, 각종 이벤트 및 행사 관련 정보안내를 위한 TM, EM, SMS, DM 발송 등의 마케팅 등</li>
+				<li>- 자사 및 참여사, 제휴사 상품/서비스에 대한 제반 마케팅(대행포함) 활동 (TM, EM, SMS, DM 발송 등 마케팅, 판촉행사 및 이벤트, 사은 행사 소개 등 포함)</li>
+			</ul>
+		</div>
+	</div>
+	<!-- // View -->
+
+	<!-- code -->
+	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+
+<!-- 기존 help-box 디자인 변경으로 mgs-box 클래스 적용된 div 사용 -->
+<u-help-box>
+	<div class="msg-box">
+		텍스트 텍스트
+		텍스트 텍스트
+	</div>
+</u-help-box>
+
+
+	</xmp></pre>
 
 </div>
-<script type="text/javascript" src="/coding_list/js/pretty.js"></script>
 </body>
+<script type="text/javascript" src="/pub_list/js/pretty.js"></script>
+<script src="/pub_list/js/clipboard.min.js"></script>
+
+<script type='text/javascript'>
+function showTooltip(elem) {
+    $("<span id='clpmsg'>Copied</span>").prependTo(elem), $(elem).children().first().delay(1e3).fadeOut(1e3, function() {
+        $(this).remove()
+    })
+}
+$("<button class='clpbrd' data-clipboard-action='copy' data-clipboard-target='pre xmp'><img src='/pub_list/img/clippy.svg' alt='Copy to clipboard'></button>").insertBefore("pre xmp");
+var clipboard = new ClipboardJS(".clpbrd", {
+    target: function(trigger) {
+        return trigger.nextElementSibling
+    }
+});
+clipboard.on("success", function(e) {
+    e.clearSelection(), showTooltip(e.trigger)
+});
+var TopOffset = parseInt($(".clpbrd").css("top"));
+$("pre").scroll(function() {
+    $(".clpbrd").css({
+        top: $(this).scrollTop() + TopOffset
+    })
+});
+</script>
 </html>

@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
 	<title>Form Guide</title>
-	<link rel="stylesheet" href="/npass/css/npass.css">
-	<link rel="stylesheet" href="/npass/lib/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" href="/npass/css/contents.css">
+	<link rel="stylesheet" href="/resources/css/bulma.css">
+	<link rel="stylesheet" href="/resources/lib/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/resources/css/contents.css">
 
 	<!-- 가이드용 -->
-	<link rel="stylesheet" type="text/css" href="/coding_list/css/base.css">
-	<link rel="stylesheet" type="text/css" href="/coding_list/css/pretty.css">
+	<link rel="stylesheet" type="text/css" href="/pub_list/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/pub_list/css/pretty.css">
 	<link type="text/css" rel="stylesheet" href="/resource/css/common.css" />
 	<!--//  가이드용 -->
 
-	<script type="text/javascript" src="/npass/lib/jquery/jquery.min.js"></script>
-	<script scr="/npass/js/ui.js"></script>
+	<script type="text/javascript" src="/resources/lib/jquery/jquery.min.js"></script>
+	<script scr="/resources/js/ui.js"></script>
 	<style>
 		.tag:not(body){
 			align-items : baseline;
@@ -92,11 +92,11 @@
 	<h2 class="h2_guide">01-3. Input Box Add Button</h2>
 	<!-- View -->
 	<div class="guide_wrap">
-		<div class="columns add-util-btn is-mobile">
+		<div class="columns add-util-btn">
 			<div class="control column">
 				<input type="text" class="input is-medium">
 			</div>
-			<div class="column is-one-quarter">
+			<div class="column is-one-fifth">
 				<button type="button" class="button is-medium is-green">아이디 확인</button>
 			</div>
 		</div>
@@ -106,11 +106,11 @@
 	<!-- code -->
 	<div class="d_desc code">
 		<xmp class="prettyprint linenums javascript">
-<div class="columns add-util-btn is-mobile">
+<div class="columns add-util-btn">
 	<div class="control column">
 		<input type="text" class="input is-medium">
 	</div>
-	<div class="column is-one-quarter">
+	<div class="column is-one-fifth">
 		<button type="button" class="button is-medium is-green">아이디 확인</button>
 	</div>
 </div>
@@ -509,7 +509,7 @@
 	</div>
 	<!-- // code -->
 
-	<h2 class="h2_guide">05-4. 타이틀 + 입력폼 / 3Column / Size : half / 모바일 레이아웃 유지 / 휴대폰 번호(All Input)</h2>
+	<h2 class="h2_guide">05-4. 타이틀 + 입력폼 / 3Column / Size : half / 모바일 레이아웃 유지</h2>
 	<!-- View -->
 	<div class="guide_wrap">
 		<div class="columns">
@@ -549,77 +549,6 @@
 			</div>
 			<div class="column is-4">
 				<input type="text" class="input is-medium">
-			</div>
-		</div>
-	</div>
-</div>
-		</xmp>
-	</div>
-	<!-- // code -->
-
-	<h2 class="h2_guide">05-5. 타이틀 + 입력폼 / 3Column / Size : half  / 휴대폰 번호(Selectbox + Input)</h2>
-	<!-- View -->
-	<div class="guide_wrap">
-		<div class="columns">
-			<div class="column is-half">
-				<label class="label">자택 번호<span>(선택)</span></label>
-				<div class="columns phone-box">
-					<div class="column is-4">
-						<div class="control">
-							<div class="select is-medium is-fullwidth">
-								<select>
-									<option value="self" selected="selected">선택</option>
-									<option>010</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="column is-8 columns is-mobile">
-						<div class="column">
-							<div class="control">
-								<input type="tel" class="input is-medium">
-							</div>
-						</div>
-						<div class="column">
-							<div class="control">
-								<input type="tel" class="input is-medium">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- // View -->
-
-	<!-- code -->
-	<div class="d_desc code">
-		<xmp class="prettyprint linenums javascript">
-<div class="columns">
-	<div class="column is-half">
-		<label class="label">자택 번호<span>(선택)</span></label>
-		<div class="columns phone-box">
-			<div class="column is-4">
-				<div class="control">
-					<div class="select is-medium is-fullwidth">
-						<select>
-							<option value="self" selected="selected">선택</option>
-							<option>010</option>
-						</select>
-					</div>
-				</div>
-			</div>
-			<div class="column is-8 columns is-mobile">
-				<div class="column">
-					<div class="control">
-						<input type="tel" class="input is-medium">
-					</div>
-				</div>
-				<div class="column">
-					<div class="control">
-						<input type="tel" class="input is-medium">
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -732,7 +661,7 @@
 
 
 </div>
-<script type="text/javascript" src="/coding_list/js/pretty.js"></script>
+<script type="text/javascript" src="/pub_list/js/pretty.js"></script>
 
 </body>
 </html>

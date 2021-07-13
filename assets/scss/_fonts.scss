@@ -1,5 +1,5 @@
 $font-name : 'NotoSansKR';
-$font-path : '/assets/fonts/';
+$font-path : '../fonts/';
 $fonts     : ('Thin' : 100, 'Light' : 300, 'Regular' : 400, 'Medium' : 500, 'Bold' : 700, 'Black' : 900);
 
 @each $name, $size in $fonts {
@@ -87,12 +87,15 @@ $fonts     : ('Thin' : 100, 'Light' : 300, 'Regular' : 400, 'Medium' : 500, 'Bol
 // .icon-sel:before { content: '\e801'; } /* '' */
 // .icon-search:before { content: '\e802'; } /* '' */
 
-.ic-dot:before { content: '\e800'; } /* '' */
+.ic-info:before { content: '\e800'; } /* '' */
 .ic-sel:before { content: '\e801'; } /* '' */
-.ic-search:before { content: '\e802'; margin-left:-5px; margin-right:-5px;} /* '' */
+.ic-search:before { content: '\e802'; } /* '' */
 .ic-star:before { content: '\e803'; } /* '' */
+.ic-down:before { content: '\e804'; } /* '' */
+.ic-check:before { content: '\e805'; } /* '' */
+.ic-edit:before { content: '\e806'; } /* '' */
+.ic-renew:before { content: '\e807'; } /* '' */
 .ic-fold:before { content: '\e80b'; } /* '' */
-.ic-awdn:before { content: '\e80c'; } /* '' */
 .ic-more:before { content: '\e80e'; } /* '' */
 .ic-cal:before { content: '\e80f'; } /* '' */
 .ic-point:before { content: '\e810'; } /* '' */
@@ -103,7 +106,7 @@ $fonts     : ('Thin' : 100, 'Light' : 300, 'Regular' : 400, 'Medium' : 500, 'Bol
 .ic-tag:before { content: '\e815'; } /* '' */
 .ic-hand:before { content: '\e816'; } /* '' */
 .ic-shop:before { content: '\e817'; } /* '' */
-.ic-bul01:before { content: '\e804'; } /* '' */
+.ic-add:before { content: '\e81a'; } /* '' */
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.gsc-icon::before {

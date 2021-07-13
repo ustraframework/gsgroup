@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" class="has-navbar-fixed-top has-aside-expanded">
+<!-- has-aside-expanded -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover">
+    <title>GS&amp;POINT</title>
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/img/bookmark.png">
+
+    <!-- Library CSS -->
+    <!-- // Library CSS -->
+
+    <!-- BOS CSS -->
+    <link rel="stylesheet" href="../assets/css/gsc_bos.css">
+    <!-- // BOS CSS -->
+
+    <!-- Library JS -->
+    <script src="../assets/lib/simplebar/simplebar.min.js"></script>
+    <!-- // Library JS -->
+    <!-- <script src="../assets/js/ui.js"></script> -->
+
+
+</head>
+
+<body>
+    <div class="modal system is-active">
+        <div class="modal-background" aria-label="background"></div>
+        <div class="modal-card">
+            <div class="modal-card-head">
+                <h3 class="modal-card-title">이용내역 마스터 이력 팝업</h3>
+                <button class="delete" aria-label="close"></button>
+            </div>
+            <div class="modal-card-body">
+                <section>
+                    <!-- Main container -->
+                    <div class="sec-top">
+                        <div class="left">
+                            <h2>이용내역수집조회</h2>
+                        </div>
+                        <div class="right">
+                            <div class="buttons">
+                                <a class="button is-gsc"><i class="gsc-icon ic-search"></i> 검색</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tb-search">
+                        <div class="row">
+                            <div class="col">
+                                <label class="label">채널코드</label>
+                                <input class="input" type="email" placeholder="Recipient email">
+                                <button class="button">
+                                    <i class="gsc-icon ic-search"></i>
+                                    <span class="is-sr-only">검색</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="label">두줄일 경우 두</label>
+                                <input class="input" type="email" placeholder="Recipient email">
+                                <!-- <button class="button">
+												<i class="gsc-icon ic-search"></i>
+												<span class="is-sr-only">검색</span>
+											</button> -->
+                                <div class="control">
+                                    <label class="b-radio radio">
+                                        <input type="radio" disabled name="answer01" value="one">
+                                        <span class="check"></span>
+                                        <span class="control-label"> 시작일자 </span>
+                                    </label>
+                                    <label class="b-radio radio">
+                                        <input type="radio" name="answer01" value="ttt">
+                                        <span class="check"></span>
+                                        <span class="control-label"> 종료일자 </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="label">두줄일 </label>
+                                <input class="input" type="email" placeholder="Recipient email">
+                                <!-- <button class="button">
+												<i class="gsc-icon ic-search"></i>
+												<span class="is-sr-only">검색</span>
+											</button> -->
+                                <!---->
+                                <div class="control">
+                                    <label class="b-checkbox checkbox">
+                                        <input type="checkbox" true-value="true" value="lorem">
+                                        <span class="check is-primary"></span>
+                                        <span class="control-label"> Lorem </span>
+                                    </label>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                        <!-- <div class="columns">
+										<div class="column">
+											<div class="field is-horizontal">
+												<div class="field-label is-normal">
+												</div>
+												<div class="field-body">
+													<div class="field">
+														<p class="control">
+															<input class="input" type="email" placeholder="Recipient email">
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="column">
+											<div class="field is-horizontal">
+												<div class="field-label is-normal">
+													<label class="label">이용내역구분</label>
+												</div>
+												<div class="field-body">
+													<div class="field">
+														<p class="control">
+															<input class="input" type="email" placeholder="Recipient email">
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column">
+											<div class="field is-horizontal">
+												<div class="field-label is-normal">
+												</div>
+												<div class="field-body">
+													<div class="field">
+														<p class="control">
+														<div class="select is-small">
+															<select>
+																<option>Select dropdown</option>
+																<option>With options</option>
+															</select>
+														</div>
+			
+														</p>
+													</div>
+													<button class="button">
+														<i class="gsc-icon ic-search"></i>
+														<span class="is-sr-only">검색</span>
+													</button>
+												</div>
+											</div>
+										</div>
+										<div class="column">
+											<div class="field is-horizontal">
+												<div class="field-label is-normal">
+													<label class="label">이용내역구분</label>
+												</div>
+												<div class="field-body">
+													<div class="field">
+														<p class="control">
+															<input class="input" type="email" placeholder="Recipient email">
+														</p>
+													</div>
+													<div class="control">
+														<label class="radio">
+															<input type="radio" name="foobar">
+															시작일자
+														</label>
+														<label class="radio">
+															<input type="radio" name="foobar" checked>
+															종료일자
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="columns">
+										<div class="column">
+											<div class="field is-horizontal">
+												<div class="field-label is-normal">
+												</div>
+												<div class="field-body">
+													<div class="field">
+														<p class="control">
+														<div class="select is-small">
+															<select>
+																<option>Select dropdown</option>
+																<option>With options</option>
+															</select>
+														</div>
+			
+														</p>
+													</div>
+													<button class="button">
+														<span class="icon is-small">
+															<i class="gsc-icon ic-search"></i>
+														</span>
+													</button>
+												</div>
+											</div>
+										</div>
+										<div class="column">
+											<div class="field is-horizontal">
+												<div class="field-label is-normal">
+													<label class="label">이용내역구분</label>
+												</div>
+												<div class="field-body">
+													<div class="field">
+														<p class="control">
+															<input class="input" type="email" placeholder="Recipient email">
+															<span class="hy"> ~ </span>
+															<input class="input" type="email" placeholder="Recipient email">
+														</p>
+													</div>
+													<div class="control">
+														<label class="radio">
+															<input type="radio" name="foobar">
+															시작일자
+														</label>
+														<label class="radio">
+															<input type="radio" name="foobar" checked>
+															종료일자
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div> -->
+                    </div>
+                    <div class="table-container">
+                        <table class="table is-bordered is-hoverable" width="3000">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col width="2000">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>이용내역분류 코드</th>
+                                    <th>이용내역분류 코드</th>
+                                    <th>이용내역분류 코드</th>
+                                    <th>이용내역분류 코드</th>
+                                    <th>이용내역분류 코드</th>
+                                    <th>이용내역분류 코드</th>
+                                    <th>이용내역분류 코드</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                </tr>
+                                <tr>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                </tr>
+                                <tr>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                </tr>
+                                <tr>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                </tr>
+                                <tr>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                </tr>
+                                <tr>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                    <td>채널코드명 1234</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="sec-info"> 조회결과: 총 <strong>1,000</strong>건 </div>
+                </section>
+            </div>
+            <!-- <div class="modal-card-foot">
+			<button type="button" class="button is-medium is-green">확인</button>
+		</div> -->
+
+        </div>
+    </div>
+    <script>
+        // guide_view
+        const button = document.querySelectorAll('.button, .delete'),
+            modal = document.querySelector('.modal');
+
+        button.forEach((idx) => {
+            idx.addEventListener('click', () => {
+                modal.classList.remove('is-active');
+            })
+        })
+    </script>
+</body>
+
+
+</html>

@@ -1,7 +1,9 @@
 $select-colors: $form-colors !default;
 
 .select {
-	
+	&:not(.is-multiple) {
+		height: auto;
+	}
 	&:not(.is-multiple):not(.is-loading) {
 		&::after {
 			// @extend %arrow;
@@ -36,3 +38,9 @@ $select-colors: $form-colors !default;
 
 	
 }
+// div[class^='tb-'] {
+// 	.col {
+
+		
+// 	}
+// }

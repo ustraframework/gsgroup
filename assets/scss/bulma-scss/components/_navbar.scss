@@ -1,4 +1,4 @@
-@import "../utilities/mixins";
+@import "./bulma-scss/utilities/mixins";
 
 $navbar-background-color: $scheme-main !default;
 $navbar-box-shadow-size: 0 2px 0 0 !default;
@@ -142,7 +142,7 @@ $navbar-colors: $colors !default;
     }
   }
 
-  & > .container {
+  & > main {
     align-items: stretch;
     display: flex;
     min-height: $navbar-height;

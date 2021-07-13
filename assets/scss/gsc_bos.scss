@@ -52,11 +52,15 @@ $menu-item-hover-color: $color-01;
 $menu-item-hover-background-color: none;
 $menu-item-active-color: $color-01;
 $menu-item-active-background-color: none;
+$menu-list-border-left:none;
+$menu-nested-list-padding-left: 20px;
 
 
 /* Aside: specifics */
-$aside-width: $size-base * 21;
-$aside-mobile-width: $size-base * 15;
+// $aside-width: $size-base * 21;
+// $aside-width: $size-base * 22.25;
+$aside-width: $size-base * 23.5;
+$aside-mobile-width: 0;
 $aside-icon-width: $size-base * 3;
 $aside-submenu-font-size: $size-base * .95;
 $aside-box-shadow: none;
@@ -92,7 +96,7 @@ $checkbox-border: 1px solid $base-color;
 /* Modal card: Bulma override */
 $modal-card-head-background-color: $white-ter;
 $modal-card-title-size: $size-base;
-$modal-card-body-padding: $default-padding 20px;
+// $modal-card-body-padding: 1.5rem 2rem;
 $modal-card-head-border-bottom: 1px solid $white-ter;
 $modal-card-foot-border-top: 0;
 
@@ -122,6 +126,9 @@ $icon-update-mark-color: $yellow;
 // $menu-list-link-padding: 0.5em 0.75em !default;
 // $menu-nested-list-margin: 0.75em !default;
 
+// $navbar-breakpoint: $fullhd !default;
+$navbar-breakpoint: $fullhd !default;
+
 /* _table */
 $table-cell-border: 1px solid $color-03;
 $table-head-background-color: #ffffff;
@@ -137,6 +144,9 @@ $radius-small: 4px;
 $control-radius-small: 4px;
 $control-height: 2.25em;
 
+/* _tabs */
+$tabs-boxed-link-radius: 0;
+
 /*  */
 // $size-normal:0.938rem;
 /* ========  custom itw ======== */ 
@@ -150,7 +160,10 @@ $header-font-size: $size-base * 1.125;
 $header-line-height: 1;
 
 $layout-gap: 40px;
+$max-input: 290px;
+$min-label: 120px;
 
+// $navbar-breakpoint: $desktop !default;
 
 @mixin transition($t) {
     transition: $t 250ms ease-in-out 50ms;
@@ -173,10 +186,13 @@ $layout-gap: 40px;
 @import "./_table.scss";
 @import "./_tools.scss";
 @import "./_columns.scss";
+@import "./_navbar.scss";
+@import "./_menu.scss";
 @import "./_simplebar.scss";
 
 @import "./_layout.scss";
 @import "./_contents.scss";
+@import "./_modal.scss";
 
 
 // .columns, .column {display: flex !important;}
