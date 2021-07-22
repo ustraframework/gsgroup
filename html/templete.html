@@ -871,6 +871,109 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="data-table">
+
+                        <table>
+                            <colgroup>
+                                <col width="33.3%">
+                                <col width="33.3%">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>개인정보 수탁자</th>
+                                    <th>취급위탁 목적</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>마케팅 및 CS</td>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                                <tr>
+                                    <td>마케팅 및 CS</td>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                                <tr>
+                                    <td>마케팅 및 CS</td>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="data-table is-type01 mt-5">
+
+                        <table>
+                            <colgroup>
+                                <col width="33.3%">
+                                <col width="33.3%">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>개인정보 수탁자</th>
+                                    <th>취급위탁 목적</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="tb_th">마케팅 및 CS</th>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                                <tr>
+                                    <th class="tb_th">마케팅 및 CS</th>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                                <tr>
+                                    <th>test</th>
+                                    <th>test</th>
+                                    <th>test</th>
+                                </tr>
+                                <tr>
+                                    <th class="tb_th">마케팅 및 CS</th>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>개인정보 수탁자</th>
+                                    <th>취급위탁 목적</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="tb_th">마케팅 및 CS</th>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                                <tr>
+                                    <th class="tb_th">마케팅 및 CS</th>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                                <tr>
+                                    <th>test</th>
+                                    <th>test</th>
+                                    <th>test</th>
+                                </tr>
+                                <tr>
+                                    <th class="tb_th">마케팅 및 CS</th>
+                                    <td>GS 엠비즈</td>
+                                    <td>홈페이지 관리 및 고객서비스 운영대행, 고객상담센터 위탁 운영</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
             </div>
             <!-- // Contents -->
@@ -881,38 +984,33 @@
 
 <script>
     document.querySelector('.sc-left').addEventListener('click', function() {
-
         let utilMenu = document.querySelector('html');
         utilMenu.classList.toggle('is-fold');
-        this.classList.toggle('add')
+        this.classList.toggle('add');
     });
 
-    const cntScrollbar = new SimpleBar(document.querySelector('#contents'));
-    cntScrollbar.recalculate();
+    // const cntScrollbar = new SimpleBar(document.querySelector('#contents'));
+    // cntScrollbar.recalculate();
 
-    const bos3 = {
 
-        gnb() {
-            const gnbScrollbar = new SimpleBar(document.querySelector('#gnb'));
-            const gnb = document.getElementById('gnb');
-            const items = gnb.querySelectorAll('a');
-            items.forEach((item, idx) => {
-                item.addEventListener('click', function() {
-                    if (this.nextElementSibling != null) {
-                        this.classList.toggle('is-active');
 
-                        // simpleBar Scroll init()
-                        this.nextElementSibling.ontransitionend = () => {
-                            gnbScrollbar.recalculate();
-                        };
+    // const gnbScrollbar = new SimpleBar(document.querySelector('#gnb'));
+    const gnb = document.getElementById('gnb');
+    const items = gnb.querySelectorAll('a');
+    items.forEach((item, idx) => {
+        item.addEventListener('click', function() {
+            if (this.nextElementSibling != null) {
+                this.classList.toggle('is-active');
 
-                    };
+                // simpleBar Scroll init()
+                // this.nextElementSibling.ontransitionend = () => {
+                // 	gnbScrollbar.recalculate();
+                // };
 
-                });
-            });
-        },
-    }
-    bos3.gnb();
+            };
+
+        });
+    });
 </script>
 
 </html>

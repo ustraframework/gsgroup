@@ -485,6 +485,7 @@ html.has-aside-expanded {
         }
         .right {
             @extend .level-right;
+            margin-left:auto;
         }
     }
     .sec-info {

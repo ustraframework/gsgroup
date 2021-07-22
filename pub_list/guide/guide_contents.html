@@ -52,32 +52,40 @@
 <div id="wrap" class="coding_guide">
 
 	<h1 class="h1_guide">컨텐츠 Guide</h1>
-	<h2 class="h2_guide">01. 레이아웃</h2>
+	<h2 class="h2_guide">01. 공통</h2>
 	<!-- code -->
     <div class="example">
-		<article class="message is-danger is-small">
+		<article class="message is-success is-small">
 			<div class="message-body">
-				base-size="높이값"로 데이터 리스트 높이 지정 <br>
-				(데이터 노출안됨, 레이아웃 오류시 확인 필요)
+				<strong>!! 템플릿 사이트와 실제 개발 소스는 프레임워크에 맞춰 커스텀 되어있어 차이가 있으니 디자인 참고용으로만 사용 하셔야 합니다.</strong>
 			</div>
 		</article>
+		<!-- <article class="message is-danger is-small">
+			<div class="message-body">
+				스크롤 오류 방지를 위해 base-size="auto" 유지 <br>
+				dx-box width="100%" height="auto" 으로 조정
+				
+				예외적으로 높이를 설정 할 수도 있음 
+				dx-box width="100%" height="1000" 
+
+			</div>
+		</article> -->
 
     </div>
 	<!-- code -->
-	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
+	<!-- <pre class="d_desc code"><xmp class="prettyprint linenums javascript">
 
-<!-- 기존 활용 코드 -->
-<dx-item base-size="auto">
-.
-.
-<!-- 모든 base-size="auto"는 임의의 높이값을 입력 -->
-<dx-item base-size="높이값">
-	<!-- ex -->
-	<dx-item base-size="100">
-	<dx-item base-size="500">
-	<!-- //ex -->
+<dx-box width="100%" height="1000" derection="col">
+	height="100%" 부분을 임의의 높이값으로 조정
+	...
+</dx-box>
 
-	</xmp></pre>
+<dx-box width="100%" height="auto" derection="col">
+	height="100%" 부분을 임의의 높이값으로 조정
+	...
+</dx-box>
+
+	</xmp></pre> -->
 	<!-- // code -->
 
 	<div class="example">
@@ -313,16 +321,32 @@
 				<!-- u-field 안에 field-row 사용 금지 -->
 		</u-field>
 	</u-field-row>
-</u-field-set>
 
-<!-- 입력폼 -->
-<u-field-set class="view-data-box">
+	<!-- 임의로 입력폼의 넓이 지정하기 -->
 	<u-field-row>
-		<u-field label="샘플">
-			<u-text-box >
+		<u-field width="전체 입력폼 넓이">
+			<dx-text-box style="flex-grow: 0; width:100px" />
+			<!-- 첫번째 입력폼 사이즈 100px 지정 -->
+			<dx-text-box />
+			<dx-text-box />
+			<!-- 두번째,세번째 입력폼 나머지 균등한 넓이 -->
+		
 		</u-field>
 	</u-field-row>
 </u-field-set>
+
+
+<!-- 입력폼 -->
+<u-botton-bar mode="form">
+</u-botton-bar>
+
+<!-- 검색폼 -->
+<u-botton-bar mode="search">
+</u-botton-bar>
+
+<!-- 타이틀 없이 버튼 영역만 노출 -->
+<u-botton-bar title="">
+</u-botton-bar>
 
 <!-- 컬럼합치기 -->
 <u-field label="샘플" class="is-3-2"> 
@@ -331,6 +355,7 @@
 	4칸중 2개 합치기
 <u-field label="샘플" class="is-4-3">
 	4칸중 3개 합치기
+
 
 	</xmp></pre>
 	<!-- // code -->
@@ -381,7 +406,7 @@
 		</div>
 		<article class="message is-danger is-small">
 			<div class="message-body">
-			레이아웃용으로 필요시 사용
+			<strong>레이아웃용으로 필요시 사용</strong>
 			</div>
 		</article>
 	</div>
@@ -422,7 +447,7 @@
 			</div>
 			<div class="right">
 				<div class="buttons">
-					<a class="button is-gsc"><i class="gsc-icon ic-search"></i> 검색</a>
+					<a class="button is-gsc"> 검색</a>
 					<a class="button is-gsc is-outlined">고객정보이용내역팝업</a>
 					<a class="button is-gsc is-outlined">엑셀</a>
 				</div>
@@ -438,14 +463,8 @@
 	<!-- code -->
 	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
 
-<u-button-bar>
-	<dx-button />
-	<dx-button />
-	<dx-button />
-</u-button-bar>
-
-<!-- 타이틀 없이 버튼만 노출 하는 경우 -->
-<u-button-bar class="no-title">
+<!-- 타이틀 공백일시 버튼만 노출  -->
+<u-button-bar title="">
 	<dx-button />
 	<dx-button />
 	<dx-button />
@@ -602,7 +621,6 @@
 	.data-table {
 		...
 	}
-	
 
 </style>
 
@@ -630,7 +648,7 @@
 	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
 
 <!-- 상단 간격 조절이 필요할 경우 -->
-<dx-tab-panel class="mt-t">
+<dx-tab-panel class="mt-5">
 	class="mt-5" 사용으로 간격 조정
 </dx-tab-panel>
 
@@ -655,12 +673,18 @@
 	<!-- code -->
 	<pre class="d_desc code"><xmp class="prettyprint linenums javascript">
 
-<!-- 기존 help-box 디자인 변경으로 mgs-box 클래스 적용된 div 사용 -->
+<!-- help-box 2가지 타입 -->
+
+<!-- 메시지 박스 디자인 -->
 <u-help-box>
-	<div class="msg-box">
-		텍스트 텍스트
-		텍스트 텍스트
-	</div>
+	텍스트 텍스트
+	텍스트 텍스트
+</u-help-box>
+
+<!-- 조회 건수 표시 -->
+<u-help-box :is-grid-total="true">
+	텍스트 텍스트
+	텍스트 텍스트
 </u-help-box>
 
 

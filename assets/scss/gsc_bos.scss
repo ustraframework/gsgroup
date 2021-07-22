@@ -174,7 +174,7 @@ $min-label: 120px;
       width: $icon-base-width;
   
       &.has-update-mark:after {
-        right: ($icon-base-width / 2) - .85;
+        right: ($icon-base-width * 0.5) - .85;
       }
     }
 }
@@ -196,3 +196,6 @@ $min-label: 120px;
 
 
 // .columns, .column {display: flex !important;}
+.example {
+  @extend #contents;
+}
